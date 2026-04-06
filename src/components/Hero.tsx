@@ -70,7 +70,7 @@ const Hero = () => {
               <span className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Temukan saya di</span>
               <div className="flex gap-4">
                 <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors"><GithubIcon size={24} /></a>
-                <a href="#" className="text-slate-400 hover:text-blue-600 transition-colors"><LinkedinIcon size={24} /></a>
+                <a href="https://www.linkedin.com/in/muhammad-fikri-azzumardi" className="text-slate-400 hover:text-blue-600 transition-colors"><LinkedinIcon size={24} /></a>
                 <a href="mailto:muhammad.fikri.azzumardi@gmail.com" className="text-slate-400 hover:text-red-500 transition-colors"><Mail size={24} /></a>
               </div>
             </div>
