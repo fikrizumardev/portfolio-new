@@ -22,7 +22,7 @@ const Footer = () => {
               Dev<span className="text-primary-500">Ops.</span>
             </div>
             <p className="text-sm text-slate-500 text-center md:text-left">
-              &copy; {new Date().getFullYear()} Portofolio. All rights reserved.
+              &copy; {new Date().getFullYear()} Fikri Zumar. All rights reserved.
             </p>
           </div>
           
@@ -38,9 +38,9 @@ const Footer = () => {
                 <TwitterIcon size={20} />
               </a>
             </div>
-            <p className="text-sm flex items-center gap-1">
+            {/* <p className="text-sm flex items-center gap-1">
               Dibuat dengan <Heart size={14} className="text-red-500 fill-red-500" /> menggunakan React & Tailwind
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

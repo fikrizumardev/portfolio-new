@@ -42,7 +42,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-200 font-semibold mb-1">Email</p>
-                  <a href="mailto:hello@example.com" className="text-lg hover:underline decoration-white underline-offset-4">hello@example.com</a>
+                  <a href="mailto:muhammad.fikri.azzumardi@gmail.com" className="text-lg hover:underline decoration-white underline-offset-4 break-all">muhammad.fikri.azzumardi@gmail.com</a>
                 </div>
               </div>
               
@@ -52,7 +52,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-200 font-semibold mb-1">Telepon / WhatsApp</p>
-                  <a href="tel:+6281234567890" className="text-lg hover:underline decoration-white underline-offset-4">+62 812-3456-7890</a>
+                  <a href="tel:+6289612032599" className="text-lg hover:underline decoration-white underline-offset-4">+62 896-1203-2599</a>
                 </div>
               </div>
               
@@ -62,7 +62,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-200 font-semibold mb-1">Lokasi</p>
-                  <p className="text-lg">Bogor, Indonesia</p>
+                  <p className="text-lg">Gresik, Jawa Timur, Indonesia</p>
                 </div>
               </div>
             </div>
