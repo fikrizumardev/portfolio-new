@@ -1,5 +1,6 @@
 import { ArrowRight, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
+import myPhoto from '../assets/my-photo.png';
 
 const GithubIcon = ({ size = 24, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
@@ -31,6 +32,26 @@ const Hero = () => {
               Building Scalable <br/>
               <span className="gradient-text">Web & Infrastructure</span>
             </h1>
+
+            {/* Mobile Image */}
+            <div className="md:hidden w-full my-10">
+              <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[400px]">
+                <div className="absolute inset-0 bg-indigo-100 rounded-[2rem] transform -rotate-3 scale-105"></div>
+                <div className="relative bg-gradient-to-b from-blue-100 to-indigo-100 rounded-[2rem] overflow-hidden border-[5px] border-white shadow-xl h-[380px] sm:h-[450px] flex items-end justify-center pt-8">
+                  <img src={myPhoto} alt="My Profile" className="w-[100%] h-full object-contain object-bottom drop-shadow-[0_15px_15px_rgba(0,0,0,0.15)]" />
+                </div>
+                <div className="absolute -bottom-5 -left-2 sm:-left-4 glass px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl flex items-center gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shadow-sm">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Tersedia</p>
+                    <p className="text-[10px] sm:text-sm text-slate-500">untuk proyek baru</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <p className="mt-4 text-xl text-slate-600 max-w-2xl mx-auto md:mx-0 leading-relaxed">
               Fullstack Web Developer, DevOps Engineer, dan System Administrator. Fokus pada efisiensi sistem, stabilitas aplikasi, dan solusi web yang scalable.
             </p>
@@ -59,23 +80,29 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="md:w-2/5 mt-16 md:mt-0 hidden md:block"
+            className="md:w-2/5 mt-16 md:mt-0 w-full hidden md:block"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-400 to-indigo-500 rounded-[2rem] transform rotate-3 scale-105 opacity-20"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Workspace" 
-                className="relative rounded-[2rem] shadow-2xl object-cover h-[500px] w-full border-4 border-white"
-              />
+            <div className="relative mx-auto w-full max-w-[400px]">
+              {/* Back tilted shape */}
+              <div className="absolute inset-0 bg-indigo-100 rounded-[2.5rem] transform -rotate-3 scale-105 transition-transform duration-500 hover:rotate-0"></div>
               
-              <div className="absolute -bottom-6 -left-6 glass px-6 py-4 rounded-xl flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
-                <div className="p-3 bg-green-100 rounded-full text-green-600">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+              {/* Inner shape with gradient and photo */}
+              <div className="relative bg-gradient-to-b from-blue-100 to-indigo-100 rounded-[2.5rem] overflow-hidden border-[6px] border-white shadow-xl h-[450px] flex items-end justify-center pt-8">
+                <img 
+                  src={myPhoto} 
+                  alt="My Profile" 
+                  className="w-[100%] h-full object-contain object-bottom drop-shadow-[0_15px_15px_rgba(0,0,0,0.15)]"
+                />
+              </div>
+              
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 -left-4 sm:-left-8 glass px-5 py-3 rounded-2xl flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shadow-sm">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-slate-900">Tersedia</p>
-                  <p className="text-xs text-slate-500">untuk proyek baru</p>
+                  <p className="text-sm font-bold text-slate-900 leading-tight">Tersedia</p>
+                  <p className="text-sm text-slate-500">untuk proyek baru</p>
                 </div>
               </div>
             </div>
