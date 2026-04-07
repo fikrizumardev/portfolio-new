@@ -36,7 +36,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-white">
+    <section id="skills" className="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -45,8 +45,8 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-base font-semibold text-primary-600 tracking-wide uppercase">Keahlian & Teknologi</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-semibold text-primary-600 dark:text-primary-400 tracking-wide uppercase">Keahlian & Teknologi</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
             Kemampuan Utama
           </p>
         </motion.div>
@@ -59,20 +59,20 @@ const Skills = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all"
+              className="bg-white dark:bg-slate-700/50 p-8 rounded-2xl border border-slate-100 dark:border-slate-600 shadow-sm hover:shadow-lg transition-all"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className={`p-2.5 rounded-lg border ${category.color}`}>
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-800">{category.title}</h3>
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white">{category.title}</h3>
               </div>
               
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, sIdx) => (
                   <span 
                     key={sIdx} 
-                    className="px-4 py-2 bg-slate-50 text-slate-700 text-sm font-medium rounded-full border border-slate-200 hover:bg-slate-100 transition-colors"
+                    className="px-4 py-2 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium rounded-full border border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
                   >
                     {skill}
                   </span>

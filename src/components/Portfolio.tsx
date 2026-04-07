@@ -54,7 +54,7 @@ const experiences = [
 
 const Portfolio = () => {
   return (
-    <section id="experience" className="py-24 bg-slate-50">
+    <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -63,8 +63,8 @@ const Portfolio = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-base font-semibold text-primary-600 tracking-wide uppercase">Pengalaman & Portofolio</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-semibold text-primary-600 dark:text-primary-400 tracking-wide uppercase">Pengalaman & Portofolio</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
             Proyek yang Pernah Dikerjakan
           </p>
         </motion.div>
@@ -77,20 +77,20 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`p-8 rounded-3xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white border-slate-100`}
+              className={`p-8 rounded-3xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700`}
             >
               <div className="flex items-start gap-5">
                 <div className={`p-4 rounded-2xl flex-shrink-0 ${exp.color}`}>
                   {exp.icon}
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-primary-600 mb-1">{exp.role}</div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">{exp.title}</h3>
-                  <p className="text-slate-600 leading-relaxed mb-5">{exp.desc}</p>
+                  <div className="text-sm font-bold text-primary-600 dark:text-primary-400 mb-1">{exp.role}</div>
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">{exp.title}</h3>
+                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-5">{exp.desc}</p>
                   
                   <div className="flex flex-wrap gap-2">
                     {exp.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-lg">
+                      <span key={tag} className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-lg">
                         {tag}
                       </span>
                     ))}

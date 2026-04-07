@@ -13,33 +13,30 @@ const TwitterIcon = ({ size = 20, className = "" }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 py-12">
+    <footer className="bg-slate-900 dark:bg-slate-950 border-t border-slate-800 dark:border-slate-900 text-slate-400 dark:text-slate-500 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <div className="font-bold text-2xl tracking-tighter text-white mb-2 text-center md:text-left">
-              Fikri<span className="text-primary-500">Zumar.</span>
+              Fikri<span className="text-primary-500 dark:text-primary-400">Zumar.</span>
             </div>
-            <p className="text-sm text-slate-500 text-center md:text-left">
+            <p className="text-sm text-slate-500 dark:text-slate-600 text-center md:text-left">
               &copy; {new Date().getFullYear()} Fikri Zumar. All rights reserved.
             </p>
           </div>
           
           <div className="flex flex-col items-center md:items-end">
             <div className="flex gap-4 mb-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center hover:bg-primary-600 dark:hover:bg-primary-500 hover:text-white transition-all">
                 <GithubIcon size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/muhammad-fikri-azzumardi" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+              <a href="https://www.linkedin.com/in/muhammad-fikri-azzumardi" className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-all">
                 <LinkedinIcon size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-900 flex items-center justify-center hover:bg-sky-500 dark:hover:bg-sky-400 hover:text-white transition-all">
                 <TwitterIcon size={20} />
               </a>
             </div>
-            {/* <p className="text-sm flex items-center gap-1">
-              Dibuat dengan <Heart size={14} className="text-red-500 fill-red-500" /> menggunakan React & Tailwind
-            </p> */}
           </div>
         </div>
       </div>
