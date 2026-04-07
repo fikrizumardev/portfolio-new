@@ -1,40 +1,43 @@
 import { motion } from 'framer-motion';
 import { Terminal, Layout, ServerCrash, AlignRight, Workflow } from 'lucide-react';
-
-const skillCategories = [
-  {
-    title: "Backend & Framework",
-    icon: <Terminal className="w-5 h-5" />,
-    skills: ["PHP", "Laravel", "Livewire", "REST API Integration"],
-    color: "bg-indigo-50 text-indigo-600 border-indigo-200"
-  },
-  {
-    title: "Frontend & UI",
-    icon: <Layout className="w-5 h-5" />,
-    skills: ["Tailwind CSS", "Alpine.js", "Responsive Web Design", "React"],
-    color: "bg-pink-50 text-pink-600 border-pink-200"
-  },
-  {
-    title: "Server & DevOps",
-    icon: <ServerCrash className="w-5 h-5" />,
-    skills: ["Proxmox VE", "Linux Server Administration", "Nginx/Apache", "Cloudflare"],
-    color: "bg-emerald-50 text-emerald-600 border-emerald-200"
-  },
-  {
-    title: "Content Management",
-    icon: <AlignRight className="w-5 h-5" />,
-    skills: ["WordPress", "CMS Optimization"],
-    color: "bg-blue-50 text-blue-600 border-blue-200"
-  },
-  {
-    title: "Tools & Lainnya",
-    icon: <Workflow className="w-5 h-5" />,
-    skills: ["Git / Version Control", "Jira & Confluence", "Manajemen Proyek", "Manajemen Tim"],
-    color: "bg-orange-50 text-orange-600 border-orange-200"
-  }
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Skills = () => {
+  const { t } = useLanguage();
+
+  const skillCategories = [
+    {
+      title: t('skills.c1'),
+      icon: <Terminal className="w-5 h-5" />,
+      skills: ["PHP", "Laravel", "Livewire", "REST API Integration"],
+      color: "bg-indigo-50 text-indigo-600 border-indigo-200"
+    },
+    {
+      title: t('skills.c2'),
+      icon: <Layout className="w-5 h-5" />,
+      skills: ["Tailwind CSS", "Alpine.js", "Responsive Web Design", "React"],
+      color: "bg-pink-50 text-pink-600 border-pink-200"
+    },
+    {
+      title: t('skills.c3'),
+      icon: <ServerCrash className="w-5 h-5" />,
+      skills: ["Proxmox VE", "Linux Server Administration", "Nginx/Apache", "Cloudflare"],
+      color: "bg-emerald-50 text-emerald-600 border-emerald-200"
+    },
+    {
+      title: t('skills.c4'),
+      icon: <AlignRight className="w-5 h-5" />,
+      skills: ["WordPress", "CMS Optimization"],
+      color: "bg-blue-50 text-blue-600 border-blue-200"
+    },
+    {
+      title: t('skills.c5'),
+      icon: <Workflow className="w-5 h-5" />,
+      skills: ["Git / Version Control", "Jira & Confluence", t('skills.t1'), t('skills.t2')],
+      color: "bg-orange-50 text-orange-600 border-orange-200"
+    }
+  ];
+
   return (
     <section id="skills" className="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,9 +48,9 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-base font-semibold text-primary-600 dark:text-primary-400 tracking-wide uppercase">Keahlian & Teknologi</h2>
+          <h2 className="text-base font-semibold text-primary-600 dark:text-primary-400 tracking-wide uppercase">{t('skills.subtitle')}</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Kemampuan Utama
+            {t('skills.title')}
           </p>
         </motion.div>
 

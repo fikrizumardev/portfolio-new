@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -14,11 +16,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Beranda', href: '#home' },
-    { name: 'Profil', href: '#about' },
-    { name: 'Pengalaman', href: '#experience' },
-    { name: 'Keahlian', href: '#skills' },
-    { name: 'Kontak', href: '#contact' },
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.profile'), href: '#about' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.skills'), href: '#skills' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -53,6 +55,13 @@ const Navbar = () => {
               </a>
             ))}
             <button 
+              onClick={toggleLanguage}
+              className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-bold text-sm tracking-wide"
+              aria-label="Toggle language"
+            >
+              {language === 'id' ? 'ID' : 'EN'}
+            </button>
+            <button 
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
               aria-label="Toggle theme"
@@ -62,6 +71,13 @@ const Navbar = () => {
           </div>
 
           <div className="md:hidden flex items-center gap-3">
+             <button 
+              onClick={toggleLanguage}
+              className="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-bold text-xs tracking-wide"
+              aria-label="Toggle language"
+            >
+              {language === 'id' ? 'ID' : 'EN'}
+            </button>
             <button 
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
