@@ -66,14 +66,14 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="mt-10 flex items-center gap-6 justify-center md:justify-start">
+            {/* <div className="mt-10 flex items-center gap-6 justify-center md:justify-start">
               <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Temukan saya di</span>
               <div className="flex gap-4">
                 <a href="#" className="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition-colors"><GithubIcon size={24} /></a>
                 <a href="https://www.linkedin.com/in/muhammad-fikri-azzumardi" className="text-slate-400 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><LinkedinIcon size={24} /></a>
                 <a href="mailto:muhammad.fikri.azzumardi@gmail.com" className="text-slate-400 dark:text-slate-500 hover:text-red-500 dark:hover:text-red-400 transition-colors"><Mail size={24} /></a>
               </div>
-            </div>
+            </div> */}
           </motion.div>
           
           <motion.div 
