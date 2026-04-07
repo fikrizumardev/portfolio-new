@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <div className="font-bold text-2xl tracking-tighter text-white mb-2 text-center md:text-left">
-              Dev<span className="text-primary-500">Ops.</span>
+              Fikri<span className="text-primary-500">Zumar.</span>
             </div>
             <p className="text-sm text-slate-500 text-center md:text-left">
               &copy; {new Date().getFullYear()} Fikri Zumar. All rights reserved.

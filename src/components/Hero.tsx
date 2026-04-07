@@ -26,7 +26,7 @@ const Hero = () => {
             className="md:w-3/5"
           >
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 font-semibold text-sm mb-6 border border-primary-100">
-              👋 Halo, saya Fikri Zumar
+              👋 Halo, saya Muh. Fikri Azzumardi
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
               Building Scalable <br/>

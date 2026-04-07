@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 font-bold text-2xl tracking-tighter text-primary-600">
-            Dev<span className="text-slate-800">Ops.</span>
+            Fikri<span className="text-slate-800">Zumar.</span>
           </div>
           
           <div className="hidden md:flex space-x-8">
