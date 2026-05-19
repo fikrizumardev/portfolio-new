@@ -30,8 +30,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-28 bg-white dark:bg-slate-800 relative transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 md:py-28 bg-white dark:bg-slate-800 relative transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* ── Section Header ── */}
         <motion.div
@@ -39,15 +39,15 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-12 md:mb-20"
         >
-          <span className="section-label mb-4 inline-flex">{t('about.subtitle')}</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <span className="section-label mb-3 inline-flex">{t('about.subtitle')}</span>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {t('about.title')}
           </h2>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-start">
 
           {/* ── Left: Bio ── */}
           <motion.div
@@ -57,7 +57,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="lg:w-1/2"
           >
-            <div className="space-y-5 text-slate-600 dark:text-slate-300 text-[1.05rem] leading-relaxed">
+            <div className="space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
               <p>
                 {t('about.p1.1')}
                 <strong className="font-semibold text-slate-800 dark:text-slate-200">{t('about.p1.strong')}</strong>
@@ -68,17 +68,17 @@ const About = () => {
             </div>
 
             {/* Stats */}
-            <div className="mt-12 grid grid-cols-2 gap-6">
+            <div className="mt-8 md:mt-12 grid grid-cols-2 gap-4">
               {[
                 { value: '3+', label: t('about.stats.years'), sub: t('about.stats.exp'), color: 'text-primary-600 dark:text-primary-400' },
                 { value: '20+', label: t('about.stats.projects'), sub: t('about.stats.completed'), color: 'text-indigo-600 dark:text-indigo-400' },
               ].map((stat, i) => (
                 <div
                   key={i}
-                  className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-100 dark:border-slate-700"
+                  className="p-4 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-700/40 border border-slate-100 dark:border-slate-700"
                 >
-                  <div className={`font-display text-4xl font-extrabold ${stat.color}`}>{stat.value}</div>
-                  <div className="mt-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-snug">
+                  <div className={`font-display text-3xl sm:text-4xl font-extrabold ${stat.color}`}>{stat.value}</div>
+                  <div className="mt-1.5 text-[10px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-snug">
                     {stat.label}<br />{stat.sub}
                   </div>
                 </div>
@@ -92,7 +92,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:w-1/2 grid sm:grid-cols-2 gap-5 w-full"
+            className="lg:w-1/2 grid grid-cols-2 gap-4 w-full"
           >
             {cards.map((card, idx) => (
               <motion.div
@@ -101,13 +101,13 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className={`bg-gradient-to-br ${card.accent} p-7 rounded-2xl border card-glow ${idx === 2 ? 'sm:col-span-2' : ''}`}
+                className={`bg-gradient-to-br ${card.accent} p-5 sm:p-7 rounded-2xl border card-glow ${idx === 2 ? 'col-span-2' : ''}`}
               >
-                <div className={`w-12 h-12 ${card.iconBg} rounded-xl flex items-center justify-center mb-5`}>
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 ${card.iconBg} rounded-xl flex items-center justify-center mb-4`}>
                   {card.icon}
                 </div>
-                <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">{card.title}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{card.desc}</p>
+                <h3 className="font-display text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-1.5">{card.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
           </motion.div>

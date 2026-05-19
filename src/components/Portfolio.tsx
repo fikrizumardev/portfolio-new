@@ -69,8 +69,8 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="experience" className="py-28 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-16 md:py-28 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* ── Section Header ── */}
         <motion.div
@@ -78,16 +78,16 @@ const Portfolio = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-12 md:mb-20"
         >
-          <span className="section-label mb-4 inline-flex">{t('portfolio.subtitle')}</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <span className="section-label mb-3 inline-flex">{t('portfolio.subtitle')}</span>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {t('portfolio.title')}
           </h2>
         </motion.div>
 
         {/* ── Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
@@ -95,33 +95,33 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className={`group bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-100 dark:border-slate-700 card-glow ${exp.accent} transition-colors duration-300`}
+              className={`group bg-white dark:bg-slate-800 p-5 sm:p-7 rounded-2xl border border-slate-100 dark:border-slate-700 card-glow ${exp.accent} transition-colors duration-300`}
             >
-              <div className="flex items-start gap-5">
+              <div className="flex items-start gap-4">
                 {/* Icon */}
-                <div className={`p-3 rounded-xl flex-shrink-0 ${exp.iconBg} ${exp.iconColor}`}>
+                <div className={`p-2.5 rounded-xl flex-shrink-0 ${exp.iconBg} ${exp.iconColor}`}>
                   {exp.icon}
                 </div>
 
                 <div className="min-w-0">
                   {/* Role label */}
-                  <div className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-1.5">
+                  <div className="text-[10px] sm:text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-1">
                     {exp.role}
                   </div>
                   {/* Title */}
-                  <h3 className="font-display text-lg font-bold text-slate-800 dark:text-white mb-3 leading-snug">
+                  <h3 className="font-display text-base sm:text-lg font-bold text-slate-800 dark:text-white mb-2 leading-snug">
                     {exp.title}
                   </h3>
                   {/* Description */}
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5">
+                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
                     {exp.desc}
                   </p>
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {exp.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-slate-100 dark:bg-slate-700/80 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-lg font-mono"
+                        className="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/80 text-slate-600 dark:text-slate-300 text-[10px] sm:text-xs font-semibold rounded-lg font-mono"
                       >
                         {tag}
                       </span>

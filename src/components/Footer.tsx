@@ -23,9 +23,9 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-800/60 text-slate-400 py-14 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+    <footer className="bg-slate-950 border-t border-slate-800/60 text-slate-400 py-10 sm:py-14 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-5 sm:gap-8">
 
           {/* Brand */}
           <div className="text-center md:text-left">
