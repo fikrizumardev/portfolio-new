@@ -66,6 +66,9 @@ const translations: Record<string, Record<Language, string>> = {
   'portfolio.p6.title': { id: 'Domain & DNS Security', en: 'Domain & DNS Security' },
   'portfolio.p6.role': { id: 'Network Security Guard', en: 'Network Security Guard' },
   'portfolio.p6.desc': { id: 'Mengelola domain, DNS, dan menerapkan keamanan dasar menggunakan layanan Cloudflare dan sistem tunneling.', en: 'Managing domains, DNS, and implementing basic security using Cloudflare services and tunneling systems.' },
+  'portfolio.p7.title': { id: 'Bali Tour & Travel', en: 'Bali Tour & Travel' },
+  'portfolio.p7.role': { id: 'Fullstack Developer', en: 'Fullstack Developer' },
+  'portfolio.p7.desc': { id: 'Membangun website tour dan travel berbasis Laravel yang berfokus melayani wisatawan dari Timur Tengah, lengkap dengan fitur pemesanan paket wisata ke Bali secara online.', en: 'Building a Laravel-based tour and travel website focused on serving Middle Eastern tourists, complete with online booking features for Bali tourism packages.' },
 
   'skills.subtitle': { id: 'Keahlian & Teknologi', en: 'Skills & Technologies' },
   'skills.title': { id: 'Kemampuan Utama', en: 'Core Abilities' },

@@ -8,6 +8,7 @@ import imgSmanRancabungur from '../assets/smanrancabungur.png';
 import imgSman2Cibinong from '../assets/sman2cibinong.png';
 import imgLazismuGresik from '../assets/lazismugresik.png';
 import imgSmpn280Jkt from '../assets/smpn280jkt.png';
+import imgBaliTour from '../assets/balitour.png';
 
 const Portfolio = () => {
   const { t } = useLanguage();
@@ -90,6 +91,19 @@ const Portfolio = () => {
       // Gambar dokumentasi: network security / DNS
       image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80',
       imageAlt: 'Domain & DNS Security Management',
+    },
+    {
+      icon: <Globe className="w-5 h-5" />,
+      title: t('portfolio.p7.title'),
+      role: t('portfolio.p7.role'),
+      desc: t('portfolio.p7.desc'),
+      tags: ['Laravel', 'PHP', 'Tailwind CSS'],
+      iconColor: 'text-rose-500',
+      iconBg: 'bg-rose-500',
+      accent: 'hover:border-rose-400/50 dark:hover:border-rose-600/50',
+      // Gambar dokumentasi: Bali Tour website
+      image: imgBaliTour,
+      imageAlt: 'Bali Tour Website',
     },
   ];
 
