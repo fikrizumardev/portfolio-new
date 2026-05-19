@@ -1,7 +1,103 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import myPhoto from '../assets/my-photo.png';
 import { useLanguage } from '../contexts/LanguageContext';
+
+/* ── Animated particle canvas background ── */
+const ParticleCanvas = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animId: number;
+    const isDark = () => document.documentElement.classList.contains('dark');
+
+    // Resize canvas to fill section
+    const resize = () => {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Particle setup
+    const COUNT = 55;
+    type Dot = { x: number; y: number; vx: number; vy: number; r: number };
+    const dots: Dot[] = Array.from({ length: COUNT }, () => ({
+      x:  Math.random() * canvas.width,
+      y:  Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 2.5,
+      vy: (Math.random() - 0.5) * 2.5,
+      r:  Math.random() * 2 + 1.2,
+    }));
+
+    const LINK_DIST = 140;
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const dark = isDark();
+      const dotColor  = dark ? 'rgba(99,179,237,0.55)'  : 'rgba(2,132,199,0.35)';
+      const lineColor = dark ? 'rgba(99,179,237,'        : 'rgba(2,132,199,';
+
+      // Move & bounce
+      for (const d of dots) {
+        d.x += d.vx;
+        d.y += d.vy;
+        if (d.x < 0 || d.x > canvas.width)  d.vx *= -1;
+        if (d.y < 0 || d.y > canvas.height) d.vy *= -1;
+      }
+
+      // Draw lines
+      for (let i = 0; i < dots.length; i++) {
+        for (let j = i + 1; j < dots.length; j++) {
+          const dx = dots[i].x - dots[j].x;
+          const dy = dots[i].y - dots[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < LINK_DIST) {
+            const alpha = (1 - dist / LINK_DIST) * 0.35;
+            ctx.beginPath();
+            ctx.strokeStyle = `${lineColor}${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(dots[i].x, dots[i].y);
+            ctx.lineTo(dots[j].x, dots[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw dots
+      for (const d of dots) {
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = dotColor;
+        ctx.fill();
+      }
+
+      animId = requestAnimationFrame(draw);
+    };
+
+    draw();
+
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener('resize', resize);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      aria-hidden="true"
+    />
+  );
+};
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -15,6 +111,9 @@ const Hero = () => {
       <div className="absolute top-1/4 -left-24 w-72 h-72 md:w-[500px] md:h-[500px] bg-primary-200 dark:bg-primary-900/40 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[60px] md:blur-[80px] opacity-40 animate-blob" />
       <div className="absolute top-1/3 -right-24 w-72 h-72 md:w-[500px] md:h-[500px] bg-indigo-200 dark:bg-indigo-900/40 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[60px] md:blur-[80px] opacity-40 animate-blob" style={{ animationDelay: '2s' }} />
       <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[300px] h-[150px] md:w-[600px] md:h-[300px] bg-sky-200 dark:bg-sky-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[60px] md:blur-[80px] opacity-30 animate-blob" style={{ animationDelay: '4s' }} />
+
+      {/* ── Particle canvas ── */}
+      <ParticleCanvas />
 
       {/* ── Grid pattern overlay ── */}
       <div
