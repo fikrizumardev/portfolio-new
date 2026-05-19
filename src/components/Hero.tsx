@@ -83,7 +83,7 @@ const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-7 flex flex-col xs:flex-row gap-3 justify-center md:justify-start">
+            <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
               <a
                 href="#experience"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 dark:bg-primary-500 text-white rounded-xl font-semibold text-sm hover:bg-primary-700 dark:hover:bg-primary-600 transition-all shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5 active:translate-y-0"
