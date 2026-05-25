@@ -69,6 +69,9 @@ const translations: Record<string, Record<Language, string>> = {
   'portfolio.p7.title': { id: 'Bali Tour & Travel', en: 'Bali Tour & Travel' },
   'portfolio.p7.role': { id: 'Fullstack Developer', en: 'Fullstack Developer' },
   'portfolio.p7.desc': { id: 'Membangun website tour dan travel berbasis Laravel yang berfokus melayani wisatawan dari Timur Tengah, lengkap dengan fitur pemesanan paket wisata ke Bali secara online.', en: 'Building a Laravel-based tour and travel website focused on serving Middle Eastern tourists, complete with online booking features for Bali tourism packages.' },
+  'portfolio.p8.title': { id: 'Website Company Profile Tobassa', en: 'Tobassa Company Profile Website' },
+  'portfolio.p8.role': { id: 'Fullstack Developer', en: 'Fullstack Developer' },
+  'portfolio.p8.desc': { id: 'Membangun website company profile modern untuk PT. Tobama Asa Jaya (Tobassa), menampilkan profil perusahaan, layanan, dan informasi kontak secara profesional.', en: 'Building a modern company profile website for PT. Tobama Asa Jaya (Tobassa), showcasing the company profile, services, and contact information professionally.' },
 
   'skills.subtitle': { id: 'Keahlian & Teknologi', en: 'Skills & Technologies' },
   'skills.title': { id: 'Kemampuan Utama', en: 'Core Abilities' },

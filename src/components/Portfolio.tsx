@@ -9,6 +9,7 @@ import imgSman2Cibinong from '../assets/sman2cibinong.png';
 import imgLazismuGresik from '../assets/lazismugresik.png';
 import imgSmpn280Jkt from '../assets/smpn280jkt.png';
 import imgBaliTour from '../assets/balitour.png';
+import imgTobassa from '../assets/tobassa.png';
 
 const Portfolio = () => {
   const { t } = useLanguage();
@@ -104,6 +105,19 @@ const Portfolio = () => {
       // Gambar dokumentasi: Bali Tour website
       image: imgBaliTour,
       imageAlt: 'Bali Tour Website',
+    },
+    {
+      icon: <Globe className="w-5 h-5" />,
+      title: t('portfolio.p8.title'),
+      role: t('portfolio.p8.role'),
+      desc: t('portfolio.p8.desc'),
+      tags: ['Laravel', 'PHP', 'Tailwind CSS'],
+      iconColor: 'text-teal-500',
+      iconBg: 'bg-teal-500',
+      accent: 'hover:border-teal-400/50 dark:hover:border-teal-600/50',
+      // Gambar dokumentasi: Tobassa company profile website
+      image: imgTobassa,
+      imageAlt: 'Website Company Profile PT. Tobama Asa Jaya (Tobassa)',
     },
   ];
 
