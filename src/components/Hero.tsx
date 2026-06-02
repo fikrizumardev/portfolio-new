@@ -1,7 +1,7 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import myPhoto from '../assets/my-photo.png';
+import myPhoto from '../assets/photo3.jpg';
 import { useLanguage } from '../contexts/LanguageContext';
 
 /* ── Animated particle canvas background ── */
@@ -156,11 +156,11 @@ const Hero = () => {
             <div className="md:hidden w-full my-6">
               <div className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px]">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-200 to-indigo-200 dark:from-primary-900/50 dark:to-indigo-900/50 rounded-[1.5rem] transform -rotate-3 scale-105 blur-sm opacity-60" />
-                <div className="relative bg-gradient-to-b from-blue-50 to-indigo-100 dark:from-blue-900/50 dark:to-indigo-900/50 rounded-[1.5rem] overflow-hidden border-4 border-white dark:border-slate-700 shadow-xl h-[280px] sm:h-[320px] flex items-end justify-center">
+                <div className="relative bg-gradient-to-b from-slate-700 to-slate-900 dark:from-blue-900/50 dark:to-indigo-900/50 rounded-[1.5rem] overflow-hidden border-4 border-white dark:border-slate-700 shadow-xl h-[340px] sm:h-[380px]">
                   <img
                     src={myPhoto}
                     alt="My Profile"
-                    className="w-full h-full object-contain object-bottom"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 {/* Status badge */}
@@ -212,11 +212,11 @@ const Hero = () => {
               {/* Back tilt */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-indigo-100 dark:from-primary-900/40 dark:to-indigo-900/40 rounded-[2.5rem] transform -rotate-3 scale-[1.03]" />
               {/* Photo card */}
-              <div className="relative bg-gradient-to-b from-blue-50 to-indigo-100 dark:from-blue-900/50 dark:to-indigo-900/50 rounded-[2.5rem] overflow-hidden border-[5px] border-white dark:border-slate-700 shadow-2xl h-[420px] lg:h-[460px] flex items-end justify-center">
+              <div className="relative bg-gradient-to-b from-slate-700 to-slate-900 dark:from-blue-900/50 dark:to-indigo-900/50 rounded-[2.5rem] overflow-hidden border-[5px] border-white dark:border-slate-700 shadow-2xl h-[480px] lg:h-[520px]">
                 <img
                   src={myPhoto}
                   alt="My Profile"
-                  className="w-full h-full object-contain object-bottom"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               {/* Floating status badge */}
